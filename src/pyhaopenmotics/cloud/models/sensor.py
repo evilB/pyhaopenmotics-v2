@@ -28,7 +28,7 @@ class Sensor(BaseModel):
     #         "room_id": null | <room_id>,
     #         "installation_id": <installation id>
     #     },
-    #     "status": {
+    #     "status": { // note the example in the documentation allows status to be null
     #         "humidity": null | <hunidity 0 - 100>,
     #         "temperature": null | <temperature -32 - 95>,
     #         "brightness": null | <brightness 0 - 100>
@@ -43,7 +43,7 @@ class Sensor(BaseModel):
     name: str
     location: Optional[Location]
     physical_quantity: Optional[str]
-    status: Status
+    status: Optional[Status]
     last_state_change: Optional[float]
     version: Optional[str] = Field(..., alias="_version")
 
